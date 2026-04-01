@@ -1,504 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amanda Bradford — Founder, Investor, Builder</title>
-    <meta name="description" content="Amanda Bradford — Founder of The League (acquired by Match Group), Investment Partner at XFactor Ventures, Stanford MBA, Carnegie Mellon alum.">
-    <meta property="og:title" content="Amanda Bradford">
-    <meta property="og:description" content="Founder of The League (acquired by Match Group). Investment Partner at XFactor Ventures. Builder of things.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://amandabradford.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: #0a0a0a;
-            color: #fff;
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 640px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 48px 24px 64px;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            font-weight: 600;
-            color: white;
-            letter-spacing: -2px;
-        }
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-        .tagline {
-            color: #888;
-            font-size: 15px;
-            line-height: 1.5;
-            margin-bottom: 12px;
-        }
-        .bio {
-            color: #aaa;
-            font-size: 13px;
-            line-height: 1.7;
-            margin-bottom: 24px;
-            max-width: 440px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .social-row {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 8px;
-        }
-        .social-row a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.08);
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            transition: all 0.2s ease;
-        }
-        .social-row a:hover {
-            background: rgba(102,126,234,0.2);
-            border-color: rgba(102,126,234,0.4);
-            transform: translateY(-1px);
-        }
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .link-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 14px 20px;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.08);
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-        .link-btn:hover {
-            background: rgba(255,255,255,0.12);
-            border-color: rgba(255,255,255,0.15);
-            transform: translateY(-1px);
-        }
-        .link-btn .icon { font-size: 18px; }
-        .section-label {
-            color: #555;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 32px 0 12px;
-            font-weight: 600;
-            text-align: center;
-        }
-        .link-btn.featured {
-            background: linear-gradient(135deg, rgba(102,126,234,0.15), rgba(118,75,162,0.15));
-            border-color: rgba(102,126,234,0.3);
-        }
-        .link-btn.featured:hover {
-            background: linear-gradient(135deg, rgba(102,126,234,0.25), rgba(118,75,162,0.25));
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amanda Bradford</title>
+<meta property="og:title" content="Amanda Bradford">
+<meta property="og:description" content="Founder • Advisor • AI Builder • Investor">
+<meta property="og:image" content="assets/images/card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@amandabradford">
+<meta name="twitter:image" content="assets/images/card.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;font-weight:300;color:#fff;background:#0a0a0a;-webkit-font-smoothing:antialiased}
 
-        /* Press wall grid */
-        .press-wall {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 8px;
-            margin-top: 8px;
-        }
-        .press-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.06);
-            color: #fff;
-            text-decoration: none;
-            font-size: 13px;
-            transition: all 0.2s ease;
-            line-height: 1.4;
-        }
-        .press-item:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: rgba(255,255,255,0.12);
-        }
-        .press-outlet {
-            color: #667eea;
-            font-weight: 600;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-            min-width: 90px;
-        }
-        .press-title {
-            color: #ccc;
-            font-weight: 400;
-        }
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;transition:background .3s}
+.nav-logo{font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:#FFF500;text-decoration:none}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;text-decoration:none;opacity:.7;transition:opacity .3s,color .3s}
+.nav-links a:hover{opacity:1;color:#FFF500}
 
-        /* Logo strip */
-        .logo-strip {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px 28px;
-            margin: 24px 0 8px;
-            opacity: 0.5;
-        }
-        .logo-strip span {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #888;
-        }
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('assets/images/bg.jpg') center 20%/cover no-repeat;z-index:0}
+.hero-bg::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.hero-content{position:relative;z-index:1;padding:120px 24px 80px}
+.hero h1{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(48px,10vw,96px);letter-spacing:8px;text-transform:uppercase;text-shadow:0 2px 20px rgba(0,0,0,.5);margin-bottom:16px;line-height:1.1}
+.hero .subtitle{font-family:'Oswald',sans-serif;font-weight:300;font-size:clamp(14px,2vw,18px);letter-spacing:5px;text-transform:uppercase;color:#FFF500;margin-bottom:32px}
+.hero .tagline{font-family:'Open Sans',sans-serif;font-weight:300;font-size:clamp(15px,1.8vw,20px);max-width:640px;margin:0 auto 48px;line-height:1.7;opacity:.9}
+.social-icons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.social-icons a{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid transparent;border-radius:50%;transition:border-color .3s,transform .3s}
+.social-icons a:hover{border-color:#FFF500;transform:scale(1.1)}
+.social-icons a svg{width:22px;height:22px;fill:#FFF500}
 
-        .footer {
-            margin-top: 48px;
-            color: #333;
-            font-size: 12px;
-            text-align: center;
-        }
+/* SECTIONS */
+section{padding:100px 24px}
+.section-inner{max-width:900px;margin:0 auto}
+.section-title{font-family:'Oswald',sans-serif;font-weight:600;font-size:clamp(28px,4vw,42px);letter-spacing:4px;text-transform:uppercase;color:#FFF500;margin-bottom:40px;text-align:center}
 
-        /* Toggle button for full press list */
-        .toggle-btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin-top: 12px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 10px;
-            color: #667eea;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-        .toggle-btn:hover {
-            background: rgba(102,126,234,0.1);
-        }
-        .hidden { display: none; }
-    </style>
+/* STORY */
+.story{background:#111}
+.story p{font-size:17px;line-height:1.9;margin-bottom:20px;opacity:.85;text-align:center}
+.story strong{color:#FFF500;font-weight:600}
+
+/* WHAT I DO */
+.work{background:#0a0a0a}
+.work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;margin-top:48px}
+.work-card{border:1px solid rgba(255,245,0,.15);border-radius:12px;padding:36px 28px;transition:border-color .3s,transform .3s}
+.work-card:hover{border-color:#FFF500;transform:translateY(-4px)}
+.work-card h3{font-family:'Oswald',sans-serif;font-weight:500;font-size:20px;letter-spacing:2px;text-transform:uppercase;color:#FFF500;margin-bottom:14px}
+.work-card p{font-size:15px;line-height:1.7;opacity:.8}
+
+/* FEATURED */
+.featured{background:#111;text-align:center}
+.press-strip{font-family:'Oswald',sans-serif;font-weight:300;font-size:clamp(16px,2.5vw,22px);letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:20px}
+.press-strip span{color:#fff;opacity:.7;transition:opacity .3s}
+.press-strip span:hover{opacity:1;color:#FFF500}
+
+/* CTA */
+.cta{background:#0a0a0a;text-align:center}
+.cta p{font-size:18px;margin-bottom:32px;opacity:.85}
+.btn{display:inline-block;font-family:'Oswald',sans-serif;font-weight:500;font-size:15px;letter-spacing:3px;text-transform:uppercase;color:#FFF500;border:2px solid #FFF500;border-radius:50px;padding:14px 44px;text-decoration:none;transition:background .3s,color .3s,transform .3s}
+.btn:hover{background:#FFF500;color:#0a0a0a;transform:scale(1.04)}
+
+/* FOOTER */
+footer{background:#111;border-top:1px solid rgba(255,245,0,.1);padding:48px 24px;text-align:center}
+footer .social-icons{margin-bottom:24px}
+footer p{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.4}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* MOBILE */
+@media(max-width:640px){
+  .nav{padding:0 20px}
+  .nav-links{gap:16px}
+  .nav-links a{font-size:11px;letter-spacing:1px}
+  section{padding:72px 20px}
+  .work-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="avatar">AB</div>
-            <h1>Amanda Bradford</h1>
-            <p class="tagline">Founder · Investor · Builder</p>
-            <p class="bio">Solo-founded The League, grew it to $16M revenue with only $2.3M raised, and sold to Match Group. Now investing in the next generation of founders at XFactor Ventures.</p>
-            <div class="social-row">
-                <a href="https://www.linkedin.com/in/amandabradford" target="_blank" title="LinkedIn">💼</a>
-                <a href="https://twitter.com/amandabradford" target="_blank" title="X / Twitter">𝕏</a>
-                <a href="https://www.instagram.com/amandabradford" target="_blank" title="Instagram">📸</a>
-            </div>
-        </div>
 
-        <div class="links">
-            <div class="section-label">Work With Me</div>
-            <a href="https://intro.co/AmandaBradford" target="_blank" class="link-btn featured">
-                <span class="icon">📞</span> Book a Call — Intro.co
-            </a>
-            <a href="https://www.xfactor.ventures/amanda-bradford" target="_blank" class="link-btn">
-                <span class="icon">🚀</span> XFactor Ventures — Investment Partner
-            </a>
+<nav class="nav">
+  <a href="#" class="nav-logo">Amanda Bradford</a>
+  <div class="nav-links">
+    <a href="#story">About</a>
+    <a href="#work">Work</a>
+    <a href="#featured">Press</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-            <div class="section-label">Writing</div>
-            <a href="https://www.linkedin.com/pulse/im-elitist-just-alpha-female-amanda-bradford" target="_blank" class="link-btn featured">
-                <span class="icon">✍️</span> I'm Not An Elitist, I'm Just An Alpha Female
-            </a>
-            <a href="https://medium.com/the-f-suite/i-m-not-an-elitist-i-m-an-alpha-female-61e2191f7cf5" target="_blank" class="link-btn">
-                <span class="icon">✍️</span> The F-Suite — Alpha Female (Medium)
-            </a>
-            <a href="https://fortune.com/2023/12/23/how-amanda-bradford-dating-app-league-founder-became-millionaire/" target="_blank" class="link-btn">
-                <span class="icon">✍️</span> Fortune — How I Made My First Million
-            </a>
-
-            <!-- AS SEEN IN logo strip -->
-            <div class="section-label">As Seen In</div>
-            <div class="logo-strip">
-                <span>New York Times</span>
-                <span>Forbes</span>
-                <span>Fortune</span>
-                <span>Vanity Fair</span>
-                <span>Vogue</span>
-                <span>TechCrunch</span>
-                <span>The Economist</span>
-                <span>Business Insider</span>
-                <span>Fast Company</span>
-                <span>Entrepreneur</span>
-                <span>Cosmopolitan</span>
-                <span>Wired</span>
-                <span>CBS</span>
-                <span>Mashable</span>
-            </div>
-
-            <!-- MAJOR FEATURES -->
-            <div class="section-label">Major Features & Interviews</div>
-            <div class="press-wall">
-                <a href="https://www.forbes.com/sites/meimeifox/2023/09/18/first-intimate-interview-with-the-league-founder-amanda-bradford-since-30-million-match-group-acquisition/" target="_blank" class="press-item">
-                    <span class="press-outlet">Forbes</span>
-                    <span class="press-title">First Intimate Interview Since $30M Acquisition</span>
-                </a>
-                <a href="https://fortune.com/2023/12/18/how-the-league-founder-amanda-bradford-went-from-200000-in-debt-to-making-her-first-million/" target="_blank" class="press-item">
-                    <span class="press-outlet">Fortune</span>
-                    <span class="press-title">From $200K Debt to First Million</span>
-                </a>
-                <a href="https://www.globaldatinginsights.com/featured/the-league-ceo-amanda-bradford-departs-match-group/" target="_blank" class="press-item">
-                    <span class="press-outlet">GDI</span>
-                    <span class="press-title">Amanda Bradford Departs Match Group</span>
-                </a>
-                <a href="https://techcrunch.com/2019/08/20/this-is-your-life-in-silicon-valley-league-founder-amanda-bradford/" target="_blank" class="press-item">
-                    <span class="press-outlet">TechCrunch</span>
-                    <span class="press-title">This Is Your Life in Silicon Valley</span>
-                </a>
-                <a href="https://www.cmu.edu/engage/about-us/news/alumni/profile-abradford.html" target="_blank" class="press-item">
-                    <span class="press-outlet">CMU</span>
-                    <span class="press-title">Leagues of Love — Alumni Profile</span>
-                </a>
-                <a href="https://www.refinery29.com/en-us/the-league-alpha-female-dating" target="_blank" class="press-item">
-                    <span class="press-outlet">Refinery29</span>
-                    <span class="press-title">Alpha Females & Dating on The League</span>
-                </a>
-                <a href="https://www.influencive.com/3-world-breaking-insights-from-amanda-bradford/" target="_blank" class="press-item">
-                    <span class="press-outlet">Influencive</span>
-                    <span class="press-title">3 World-Breaking Insights</span>
-                </a>
-                <a href="https://www.entrepreneur.com/living/the-league-founders-3-hacks-for-better-dating-app-matches/469490" target="_blank" class="press-item">
-                    <span class="press-outlet">Entrepreneur</span>
-                    <span class="press-title">3 Hacks for Better Dating App Matches</span>
-                </a>
-                <a href="https://www.fastcompany.com/90965389/women-dating-apps-culture-the-league" target="_blank" class="press-item">
-                    <span class="press-outlet">Fast Company</span>
-                    <span class="press-title">Women Turning First Dates Into Job Interviews</span>
-                </a>
-                <a href="https://www.businessinsider.com/the-league-founder-responds-to-stanford-students-criticism" target="_blank" class="press-item">
-                    <span class="press-outlet">Biz Insider</span>
-                    <span class="press-title">League Founder Responds to Stanford Critic</span>
-                </a>
-                <a href="https://nextshark.com/amanda-bradford-the-league-app" target="_blank" class="press-item">
-                    <span class="press-outlet">NextShark</span>
-                    <span class="press-title">Meet the Woman Behind The League</span>
-                </a>
-                <a href="https://qz.com/1872973/amanda-bradford-on-the-future-impacted-by-coronavirus/" target="_blank" class="press-item">
-                    <span class="press-outlet">Quartz</span>
-                    <span class="press-title">The Future Means More Connection Online</span>
-                </a>
-            </div>
-
-            <!-- EXPANDABLE: ALL PRESS -->
-            <button class="toggle-btn" onclick="togglePress()">Show All Press & Mentions ↓</button>
-            <div id="all-press" class="hidden">
-                <div class="press-wall">
-                    <a href="https://www.vanityfair.com/style/2020/04/coronavirus-could-change-dating-forever" target="_blank" class="press-item">
-                        <span class="press-outlet">Vanity Fair</span>
-                        <span class="press-title">Dating in the Age of COVID-19</span>
-                    </a>
-                    <a href="https://www.vogue.com/article/the-zoom-date-single-life-during-a-pandemic" target="_blank" class="press-item">
-                        <span class="press-outlet">Vogue</span>
-                        <span class="press-title">The Zoom Date: Single Life During a Pandemic</span>
-                    </a>
-                    <a href="https://www.economist.com/international/2020/05/09/casual-sex-is-out-companionship-is-in" target="_blank" class="press-item">
-                        <span class="press-outlet">The Economist</span>
-                        <span class="press-title">Casual Sex Is Out, Companionship Is In</span>
-                    </a>
-                    <a href="https://www.nytimes.com/2020/04/18/nyregion/coronavirus-dating-video.html" target="_blank" class="press-item">
-                        <span class="press-outlet">NY Times</span>
-                        <span class="press-title">Virtual Dating Is the New Normal</span>
-                    </a>
-                    <a href="https://www.nytimes.com/2020/05/18/opinion/coronavirus-dating.html" target="_blank" class="press-item">
-                        <span class="press-outlet">NY Times</span>
-                        <span class="press-title">What Single People Are Starting to Realize</span>
-                    </a>
-                    <a href="https://www.nytimes.com/2021/08/27/style/sapna-maheshwari-devjoy-sengupta-wedding.html" target="_blank" class="press-item">
-                        <span class="press-outlet">NY Times</span>
-                        <span class="press-title">Mutual Friends Gave the Match a Big Thumb's Up</span>
-                    </a>
-                    <a href="https://www.nytimes.com/2020/06/19/style/two-more-rings-for-the-home-team.html" target="_blank" class="press-item">
-                        <span class="press-outlet">NY Times</span>
-                        <span class="press-title">Two More Rings for the Home Team</span>
-                    </a>
-                    <a href="https://www.nytimes.com/2020/10/30/fashion/weddings/at-first-he-ghosted-then-they-became-a-couple.html" target="_blank" class="press-item">
-                        <span class="press-outlet">NY Times</span>
-                        <span class="press-title">At First He Ghosted, Then They Became a Couple</span>
-                    </a>
-                    <a href="https://www.nytimes.com/2020/10/23/style/making-a-name-of-their-own.html" target="_blank" class="press-item">
-                        <span class="press-outlet">NY Times</span>
-                        <span class="press-title">Making a Name of Their Own</span>
-                    </a>
-                    <a href="https://www.nytimes.com/2020/06/26/fashion/weddings/an-accidental-first-date.html" target="_blank" class="press-item">
-                        <span class="press-outlet">NY Times</span>
-                        <span class="press-title">An Accidental First Date</span>
-                    </a>
-                    <a href="https://www.nytimes.com/2020/06/19/fashion/weddings/it-was-the-thought-that-counted.html" target="_blank" class="press-item">
-                        <span class="press-outlet">NY Times</span>
-                        <span class="press-title">It Was the Thought That Counted</span>
-                    </a>
-                    <a href="https://sanfrancisco.cbslocal.com/2020/04/12/coronavirus-quarantine-online-dating-spikes-people-seek-romantic-connection-social-distance/" target="_blank" class="press-item">
-                        <span class="press-outlet">CBS Bay Area</span>
-                        <span class="press-title">Online Video Dating Spikes During Quarantine</span>
-                    </a>
-                    <a href="https://www.wired.com/story/how-use-airtable-trello-other-apps-fix-your-life/" target="_blank" class="press-item">
-                        <span class="press-outlet">Wired</span>
-                        <span class="press-title">How to Use Apps to Fix Your Life</span>
-                    </a>
-                    <a href="https://www.cosmopolitan.com/sex-love/a23648488/second-date-ideas/" target="_blank" class="press-item">
-                        <span class="press-outlet">Cosmopolitan</span>
-                        <span class="press-title">22 Expert-Approved Second Date Ideas</span>
-                    </a>
-                    <a href="https://www.cosmopolitan.com/uk/love-sex/relationships/a31899450/video-dating-apps/" target="_blank" class="press-item">
-                        <span class="press-outlet">Cosmo UK</span>
-                        <span class="press-title">Eight Best Apps For Video Dating</span>
-                    </a>
-                    <a href="https://www.womenshealthmag.com/relationships/g46289564/best-dating-sites-for-serious-relationships/" target="_blank" class="press-item">
-                        <span class="press-outlet">Women's Health</span>
-                        <span class="press-title">Best Dating Sites for Serious Relationships</span>
-                    </a>
-                    <a href="https://www.instyle.com/lifestyle/best-dating-sites-for-over-40" target="_blank" class="press-item">
-                        <span class="press-outlet">InStyle</span>
-                        <span class="press-title">Best Dating Apps for Women Over 40</span>
-                    </a>
-                    <a href="https://www.menshealth.com/sex-women/a30979320/first-date-questions/" target="_blank" class="press-item">
-                        <span class="press-outlet">Men's Health</span>
-                        <span class="press-title">Best & Worst First Date Questions</span>
-                    </a>
-                    <a href="https://www.askmen.com/dating/dating_advice/how-to-use-the-league-the-harvard-of-all-dating-apps.html" target="_blank" class="press-item">
-                        <span class="press-outlet">AskMen</span>
-                        <span class="press-title">The Harvard of All Dating Apps</span>
-                    </a>
-                    <a href="https://www.elitedaily.com/p/if-someone-ghosts-you-after-a-great-date-text-them-this-21795417" target="_blank" class="press-item">
-                        <span class="press-outlet">Elite Daily</span>
-                        <span class="press-title">If You Get Ghosted, Text Them This</span>
-                    </a>
-                    <a href="https://www.insidehook.com/article/relationships/millennials-dating-apps" target="_blank" class="press-item">
-                        <span class="press-outlet">InsideHook</span>
-                        <span class="press-title">The Swipe Right Generation Turns 40</span>
-                    </a>
-                    <a href="https://mashable.com/article/league-live-video-chat-feature" target="_blank" class="press-item">
-                        <span class="press-outlet">Mashable</span>
-                        <span class="press-title">Video Chatting Before First Dates</span>
-                    </a>
-                    <a href="https://www.dazeddigital.com/life-culture/article/48462/1/people-are-getting-creative-video-dating-during-coronavirus-social-distancing" target="_blank" class="press-item">
-                        <span class="press-outlet">Dazed</span>
-                        <span class="press-title">Creative Dating During Social Distancing</span>
-                    </a>
-                    <a href="https://www.brides.com/brooklyn-foodie-wedding-amber-gress-photography-8597861" target="_blank" class="press-item">
-                        <span class="press-outlet">Brides</span>
-                        <span class="press-title">Brooklyn Wedding — Met on The League</span>
-                    </a>
-                    <a href="https://people.com/sports-illustrated-swimsuit-model-katie-austin-met-fiance-the-league-dating-app-after-60-matches-8558907" target="_blank" class="press-item">
-                        <span class="press-outlet">People</span>
-                        <span class="press-title">SI Swimsuit Model Katie Austin Met Fiancé on The League</span>
-                    </a>
-                    <a href="https://www.cnet.com/tech/services-and-software/best-dating-sites/" target="_blank" class="press-item">
-                        <span class="press-outlet">CNET</span>
-                        <span class="press-title">Best Dating Sites</span>
-                    </a>
-                    <a href="https://www.businessinsider.com/9-dating-apps-to-try-instead-of-tinder-summer-2021-2021-7" target="_blank" class="press-item">
-                        <span class="press-outlet">Biz Insider</span>
-                        <span class="press-title">9 Dating Apps for People Sick of Tinder</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- PODCASTS & TALKS -->
-            <div class="section-label">Podcasts & Talks</div>
-            <a href="https://thisweekinstartups.com/episodes" target="_blank" class="link-btn">
-                <span class="icon">🎙️</span> This Week in Startups (TWiST) — with Jason Calacanis
-            </a>
-            <a href="https://open.spotify.com/episode/0hXKrlTAlTxmHbOU8jcaVx" target="_blank" class="link-btn">
-                <span class="icon">🎙️</span> The Twenty Minute VC — Single Founders & Party Rounds
-            </a>
-            <a href="https://www.entreprenista.com/podcast/theleagueapp-amanda-bradford" target="_blank" class="link-btn">
-                <span class="icon">🎙️</span> Entreprenista — Disrupting the Dating App Game
-            </a>
-            <a href="https://www.levelingup.com/growth-everywhere-interview/amanda-bradford-the-league/" target="_blank" class="link-btn">
-                <span class="icon">🎙️</span> Leveling Up — How We Raised $2.8M
-            </a>
-            <a href="https://www.theleague.com/dateable-podcast-w-founder-amanda-bradford/" target="_blank" class="link-btn">
-                <span class="icon">🎙️</span> Dateable Podcast — Dating on The League
-            </a>
-            <a href="https://hdfmagazine.com/podcast/ep-46-amanda-bradford-ceo-founder-of-the-league-app/" target="_blank" class="link-btn">
-                <span class="icon">🎙️</span> Hustle & Deal Flow — Female Tech Founder
-            </a>
-            <a href="https://sexwithemily.com/virtual-dating-in-the-new-normal/" target="_blank" class="link-btn">
-                <span class="icon">🎙️</span> Sex With Emily — Virtual Dating in the New Normal
-            </a>
-            <a href="https://podcasts.apple.com/at/podcast/the-league-dating-app-founder-amanda-bradford-on/id1102773205?i=1000416915164" target="_blank" class="link-btn">
-                <span class="icon">🎙️</span> Difficult Conversations & Getting Comfortable With Rejection
-            </a>
-            <a href="https://www.youtube.com/watch?v=0Pg4Gn3Oyyw" target="_blank" class="link-btn">
-                <span class="icon">🎥</span> YouTube — CEO Interview
-            </a>
-
-            <!-- PROFILES -->
-            <div class="section-label">Profiles</div>
-            <a href="https://www.crunchbase.com/person/amanda-bradford" target="_blank" class="link-btn">
-                <span class="icon">📊</span> Crunchbase
-            </a>
-            <a href="https://signal.nfx.com/investors/amanda-bradford" target="_blank" class="link-btn">
-                <span class="icon">📡</span> NFX Signal — Investor Profile
-            </a>
-            <a href="https://en.wikipedia.org/wiki/The_League_(app)" target="_blank" class="link-btn">
-                <span class="icon">📖</span> Wikipedia — The League
-            </a>
-            <a href="https://en.everybodywiki.com/Amanda_Bradford" target="_blank" class="link-btn">
-                <span class="icon">📖</span> EverybodyWiki — Amanda Bradford
-            </a>
-        </div>
-
-        <p class="footer">© 2026 Amanda Bradford</p>
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1 class="fade-up">Amanda Bradford</h1>
+    <p class="subtitle fade-up">Founder &bull; Advisor &bull; AI Builder &bull; Investor</p>
+    <p class="tagline fade-up">Built a dating empire as a solo founder. Acquired by Match Group. Now building with AI.</p>
+    <div class="social-icons fade-up">
+      <!-- X/Twitter -->
+      <a href="https://twitter.com/amandabradford" target="_blank" rel="noopener" aria-label="X/Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://instagram.com/amandabradford" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <!-- Facebook -->
+      <a href="https://facebook.com/amandabradford" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/amandabradford" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <!-- GitHub -->
+      <a href="https://github.com/pearlouise" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <!-- Email -->
+      <a href="/cdn-cgi/l/email-protection#aecfc3cfc0cacfeecfc3cfc0cacfccdccfcac8c1dcca80cdc1c3" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+      <!-- Intro -->
+      <a href="https://intro.co/AmandaBradford" target="_blank" rel="noopener" aria-label="Intro">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </a>
     </div>
+  </div>
+</section>
 
-    <script>
-        function togglePress() {
-            const el = document.getElementById('all-press');
-            const btn = event.target;
-            if (el.classList.contains('hidden')) {
-                el.classList.remove('hidden');
-                btn.textContent = 'Show Less ↑';
-            } else {
-                el.classList.add('hidden');
-                btn.textContent = 'Show All Press & Mentions ↓';
-            }
-        }
-    </script>
+<section class="story" id="story">
+  <div class="section-inner">
+    <h2 class="section-title fade-up">The Story</h2>
+    <p class="fade-up">Built <strong>The League</strong> as a solo founder — from 419 alpha testers to <strong>300K monthly actives</strong>, 155 cities, and <strong>$15M in revenue</strong>.</p>
+    <p class="fade-up">Raised only <strong>$2.3M</strong>. Designed and coded the matching algorithm herself.</p>
+    <p class="fade-up">Acquired by <strong>Match Group ($MTCH)</strong> — the world's largest dating conglomerate.</p>
+    <p class="fade-up">Now: building with AI, advising companies, and investing in the next generation of founders.</p>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="section-inner">
+    <h2 class="section-title fade-up">What I Do</h2>
+    <div class="work-grid">
+      <div class="work-card fade-up">
+        <h3>AI &amp; Agents</h3>
+        <p>Building autonomous AI systems. Exploring what's possible when AI has memory, tools, and personality.</p>
+      </div>
+      <div class="work-card fade-up">
+        <h3>Board Seats &amp; Advising</h3>
+        <p>Strategic guidance for startups navigating growth, fundraising, and exits.</p>
+      </div>
+      <div class="work-card fade-up">
+        <h3>Angel Investing</h3>
+        <p>Former Sequoia Scout. Investment Partner at XFactor Ventures. Backing ambitious founders.</p>
+      </div>
+      <div class="work-card fade-up">
+        <h3>Speaking</h3>
+        <p>Dating apps, founder journey, AI, marketplace growth, M&amp;A, bootstrapping vs fundraising.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured" id="featured">
+  <div class="section-inner">
+    <h2 class="section-title fade-up">Featured In</h2>
+    <div class="press-strip fade-up">
+      <span>Fortune</span> &nbsp;&bull;&nbsp; <span>Forbes</span> &nbsp;&bull;&nbsp; <span>Harvard Law School</span> &nbsp;&bull;&nbsp; <span>TechCrunch</span> &nbsp;&bull;&nbsp; <span>Business Insider</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="section-inner">
+    <h2 class="section-title fade-up">Book a Meeting</h2>
+    <p class="fade-up">Want to connect? Book a 1:1 on Intro.</p>
+    <a href="https://intro.co/AmandaBradford" target="_blank" rel="noopener" class="btn fade-up">Book on Intro</a>
+  </div>
+</section>
+
+<footer>
+  <div class="social-icons">
+    <a href="https://twitter.com/amandabradford" target="_blank" rel="noopener" aria-label="X/Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://instagram.com/amandabradford" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://linkedin.com/in/amandabradford" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://github.com/pearlouise" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+  </div>
+  <p>&copy; 2026 Amanda Bradford</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+  },{threshold:0.15});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+});
+</script>
 </body>
 </html>
